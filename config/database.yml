@@ -5,13 +5,19 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  adapter: mysql2
+  username: root
+  password: <%= ENV['DATABASE_MYSQL_PASSWORD'] || '' %>
+  host: awscourse.cj2nin87trdx.us-west-2.rds.amazonaws.com
+  variables:
+    sql_mode: TRADITIONAL
+  # adapter: sqlite3
+  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: awscoursedb
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
