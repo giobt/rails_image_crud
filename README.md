@@ -40,7 +40,10 @@ gem install rails
 * Database initialization
 
 * How to run the test suite
-
+```
+export DATABASE_MYSQL_PASSWORD=Passw0rd
+export S3_BUCKET=url-aws-course
+```
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
