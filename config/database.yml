@@ -18,12 +18,12 @@ development:
 # Do not set this db to the same as development or production.
 test:
   adapter: mysql2
-  username: root
+  username: <%= ENV['DATABASE_MYSQL_USERNAME'] || '' %>
   password: <%= ENV['DATABASE_MYSQL_PASSWORD'] || '' %>
-  host: awscourse.cj2nin87trdx.us-west-2.rds.amazonaws.com
+  host:     <%= ENV['DATABASE_MYSQL_ENDPOINT'] || '' %>
+  database: <%= ENV['DATABASE_MYSQL_DATABASE'] || '' %>
   variables:
     sql_mode: TRADITIONAL
-  database: awscoursedb
 
 production:
   <<: *default
