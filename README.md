@@ -22,8 +22,7 @@ source /usr/local/rvm/scripts/rvm
 Install NodeJS
 ```
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt install -y nodejs
-sudo apt install gcc g++ make
+sudo apt install -y nodejs gcc g++ make git libmysqlclient-dev
 ```
 Configure Ruby Gem
 ```
@@ -34,11 +33,22 @@ Install Ruby on Rails
 ```
 gem install rails
 ```
-
+Clone application code
+```
+git clone https://github.com/giobt/rails_image_crud.git
+```
 * Database creation
-
+Run database migrations:
+```
+bin/rails db:migrate RAILS_ENV=test
+```
 * Database initialization
-
+```
+export DATABASE_MYSQL_USERNAME=root
+export DATABASE_MYSQL_PASSWORD=password
+export DATABASE_MYSQL_ENDPOINT=test.cccq8uofemew.us-east-1.rds.amazonaws.com
+export DATABASE_MYSQL_DATABASE=test
+```
 * How to run the test suite
 ```
 export DATABASE_MYSQL_PASSWORD=Passw0rd

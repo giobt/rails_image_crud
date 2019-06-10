@@ -19,11 +19,11 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     # Make an object in your bucket for your upload
-    s3 = Aws::S3::Resource.new()
-    obj = s3.bucket('url-aws-course').object('test.jpg')
-    image = params[:attachment]
-    image.inspect
-    obj.put(body: image)
+    # s3 = Aws::S3::Resource.new()
+    # obj = s3.bucket('url-aws-course').object('test.jpg')
+    # image = params[:attachment]
+    # image.inspect
+    # obj.put(body: image)
 
     if @product.save
       redirect_to @product
