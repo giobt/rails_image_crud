@@ -6,6 +6,11 @@ pipeline {
     triggers {
         cron('* * * * *')
     }
+    when {
+        not {
+            branch 'test'
+        }
+    }
     stages {
         stage('Example') {
             steps {
