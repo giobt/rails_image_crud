@@ -8,8 +8,9 @@ pipeline {
     }
     stages {
         stage('Example') {
-            echo "Version ${params.VERSION}"
+            steps {
+                echo "Version ${params.VERSION}"
+            }
         }
-
     }
 }
