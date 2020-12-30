@@ -1,4 +1,4 @@
-string cron_string = BRANCH_NAME == "test" ? "* * * * *" : ""
+string cron_string = readfile('package.json').contains('awsproy') ? "* * * * *" : ""
 
 pipeline {
     agent any
