@@ -1,4 +1,5 @@
-string cron_string = readFile('package.json').contains('awsproy') ? "* * * * *" : ""
+// string cron_string = readFile('package.json').contains('awsproy') ? "* * * * *" : ""
+string cron_string = params.VERSION?.trim() ? "* * * * *" : ""
 
 pipeline {
     agent any
