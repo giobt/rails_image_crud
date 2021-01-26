@@ -17,7 +17,12 @@ pipeline {
                 }
             }
             steps {
-                echo "Version ${params.VERSION}"
+                sh """
+                    echo "Version ${params.VERSION}"
+                    export params.VERSION='1.2.3'
+                    echo "Version ${params.VERSION}"
+                """
+
             }
         }
     }
